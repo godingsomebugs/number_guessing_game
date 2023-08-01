@@ -65,7 +65,7 @@ def game(diff):
         game(diff)
 
 clearTerminal()
-printC("Number Guessing Game 1.1", "blue")
+printC("Number Guessing Game 1.0", "blue")
 inputRaw = input("difficulty(1-5): ")
 
 if inputRaw == "":
