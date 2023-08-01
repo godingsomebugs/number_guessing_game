@@ -1,3 +1,5 @@
+# build 1.1
+
 import os
 import random
 import time
@@ -40,9 +42,13 @@ def game(diff):
         number = random.randint(1,50)
 
     print("Guess a number! "+diffDesc)
-    guess = int(input())
+    guessRaw = input()
 
-    if guess == number:
+    if guessRaw == "":
+        printC("Enter a number!", "blue")
+        time.sleep(1)
+        game(diff)
+    if int(guessRaw) == number:
         printC("You win!", "green")
         time.sleep(1)
         game(diff)
@@ -59,7 +65,11 @@ def game(diff):
         game(diff)
 
 clearTerminal()
-printC("Number Guessing Game 1.0", "blue")
-difficulty = int(input("difficulty(1-5): "))
+printC("Number Guessing Game 1.1", "blue")
+inputRaw = input("difficulty(1-5): ")
 
-game(difficulty)
+if inputRaw == "":
+    game(3)
+else:
+    difficulty = int(inputRaw)
+    game(difficulty)
